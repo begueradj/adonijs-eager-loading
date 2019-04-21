@@ -22,7 +22,7 @@ class Owner extends Model {
   }
 
   houses() {
-    return this.hasMany('App/Models/Houses')
+    return this.hasMany('App/Models/House')
   }
   
 }
