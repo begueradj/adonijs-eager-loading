@@ -7,7 +7,12 @@ class HousesSchema extends Schema {
   up () {
     this.create('houses', (table) => {
       table.increments()
-      table.timestamps()
+      table.string('type', 30).notNullable()
+      table
+        .string('owner_name', 30)
+        .notNullable()
+        .references('name')
+        .inTable('owners')
     })
   }
 

@@ -7,7 +7,13 @@ class RoomsSchema extends Schema {
   up () {
     this.create('rooms', (table) => {
       table.increments()
-      table.timestamps()
+      table.integer('beds_numbers', 5).unsigned().notNullable()
+      table
+        .integer('house_id', 10)
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('houses')
     })
   }
 
