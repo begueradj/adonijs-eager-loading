@@ -6,8 +6,11 @@ const Schema = use('Schema')
 class RoomsSchema extends Schema {
   up () {
     this.create('rooms', (table) => {
-      table.increments()
-      table.integer('beds_numbers', 5).unsigned().notNullable()
+      table
+        .increments()
+      table
+        .boolean('is_available')
+        .notNullable()
       table
         .integer('house_id', 10)
         .unsigned()
