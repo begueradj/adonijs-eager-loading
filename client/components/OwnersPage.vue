@@ -12,8 +12,14 @@
       <v-flex
         xs12
       >
-        Index
+        Owners
       </v-flex>
     </v-layout>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: 'OwnersPage'
+}
+</script>
