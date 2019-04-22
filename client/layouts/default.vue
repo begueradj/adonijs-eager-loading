@@ -13,6 +13,7 @@
           :to="item.to"
           router
           exact
+          @click.stop="drawer = !drawer"
         >
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -39,6 +40,23 @@
         v-text="title"
       />
       <v-spacer />
+      <v-toolbar-items
+        class="hidden-xs-only"
+      >
+        <v-btn
+          v-for="item in items"
+          :key="item.title"
+          :to="item.to"
+          flat
+        >
+          <v-icon
+            left
+          >
+            {{ item.icon }}
+          </v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <nuxt />
